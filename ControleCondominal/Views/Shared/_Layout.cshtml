@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ControleCondominal</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <style>
+        .navbar-nav li {
+            line-height: 40px;
+        }
+    </style>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgba(70, 67, 203, 1); border: 1px solid rgba(70, 67, 203, 1); box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); padding-top: 5px; padding-bottom: 5px;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <!-- Substitua o botão de toggle padrão por uma imagem -->
+                    <img src="~/images/logo.png" alt="Toggle Navigation" style="width: 30px; height: 30px;">
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="custom-li-style"><a asp-page="/About">Bem Vindo</a></li>
+                    <li>
+                        <!-- Substitua o texto "Home" por uma imagem -->
+                        <a asp-page="/Index" class="navbar-left">
+                            <img src="~/images/logo.png" alt="Home" style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+                    <li><a asp-page="/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .custom-li-style {
+            line-height: 20px !important;
+        }
+    </style>
+
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        @RenderBody()
+
+        <div id="menu-lateral">
+            <!-- Seu menu lateral aqui -->
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <!-- Adicione mais itens conforme necessário -->
+            </ul>
+        </div>
+
+
+        <footer style="text-align: center; margin-top: 20px;">
+            <p>&copy; 2023 - Controle Condominal</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

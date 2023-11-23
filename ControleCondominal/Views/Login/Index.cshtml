@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- Adicione aqui os links para seus estilos CSS, se aplicável -->
+    <style>
+        body {
+            background-color: rgb(70, 67, 203, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 100% da altura da viewport */
+            margin: 0; /* Remover margens padrão do body */
+        }
+
+        section {
+            background-color: aliceblue;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+            text-align: center;
+        }
+
+        .log {
+            color: rgb(104, 85, 224);
+            background-color: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(104, 85, 224, 1);
+        }
+
+            .log:hover {
+                color: white;
+                box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+                background-color: rgba(104, 85, 224, 1);
+            }
+
+    </style>
+</head>
+<body>
+    <section>
+        <img src="~/images/user.png" alt="Ícone de Usuário" style="width: 150px; height: 150px; margin-bottom: 20px;" />
+
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div style="margin-bottom: 10px; margin-right: 50px;">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required style="width: 150px;">
+            </div>
+
+            <div style="margin-bottom: 10px; margin-right: 40px;">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required style="width: 150px;">
+            </div>
+
+            <button type="submit" id="log" class="log" onclick="fazerLogin()">Login</button>
+        }
+    </section>
+
+    <!-- Adicione aqui qualquer mensagem de erro, se aplicável -->
+</body>
+</html>
+
+
+<script>
+    function chamarHttpPost() {
+        $.ajax({
+            url: '/Login/Index', // Substitua por seu caminho real
+            type: 'POST',
+            data: {
+                username: $('#username').val(), // Substitua pelo ID real do campo de usuário
+                password: $('#password').val()  // Substitua pelo ID real do campo de senha
+            },
+            success: function (response) {
+                // Lida com a resposta do servidor (se necessário)
+                console.log(response);
+            },
+            error: function (error) {
+                // Lida com erros (se necessário)
+                console.error(error);
+            }
+        });
+    }
+
+</script>
