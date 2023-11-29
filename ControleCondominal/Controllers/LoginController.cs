@@ -18,19 +18,20 @@ namespace ControleCondominal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(string username, string password)
+        public IActionResult fazerLogin(string username, string password)
         {
-
             if (username == "adm" && password == "123")
             {
-                return RedirectToAction("Index", "Home");
+                // Login bem-sucedido, retornar um JSON indicando o redirecionamento
+                return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
             }
             else
             {
-                ModelState.AddModelError("", "Usuário ou senha inválidos.");
-                return View();
+                // Login falhou, retornar um JSON com erro
+                return Json(new { success = false, message = "Usuário ou senha inválidos." });
             }
         }
+
     }
-    
+
 }
