@@ -1,5 +1,167 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão de Ação</title>
+
+    <style>
+        .botoes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            height: 50vh;
+            width: 85vh;
+            margin: auto;
+        }
+
+        .meuBotao {
+            width: 150px;
+            height: 120px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: linear-gradient(to top, #4543CB 35%, #a9a9a9 35%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: "Arial", 'Comic Sans MS';
+        }
+
+            .meuBotao:hover {
+                background: linear-gradient(to top, #6060c0 35%, #8080C5 35%);
+            }
+
+        section {
+            width: 75%;
+            min-height: 300px;
+            margin: auto;
+            background: #e5e4e2;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            font-family: "Arial",'Comic Sans MS';
+        }
+    </style>
+
+</head>
 
 
+
+<body>
+
+    <header>
+        <h1> Controle de Comdomínio:"UNILESTE"</h1>
+    </header>
+
+    <nav>
+
+    </nav>
+
+    <section>
+
+        <div class="botoes-container">
+            <button id="homeApto" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/office/80/door.png" alt="door" />
+                Apartamentos
+            </button>
+
+            <button id="homeVagas" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/80/external-garage-car-service-wanicon-lineal-color-wanicon.png" alt="external-garage-car-service-wanicon-lineal-color-wanicon" />
+                Vagas
+            </button>
+
+            <button id="homeMoradores" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/plasticine/80/crowd.png" alt="crowd" />
+                Moradores
+            </button>
+
+            <button id="homeFuncionarios" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/officel/80/collaborator-male.png" alt="collaborator-male" />
+                Funcionários
+            </button>
+
+            <button id="homeBlocos" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/plasticine/100/building.png" alt="building" />
+                Blocos
+            </button>
+
+            <button id="homeDependentes" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/color/96/classmates-standing.png" alt="classmates-standing" />
+                Dependentes
+            </button>
+
+            <button id="homeCargos" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/plasticine/100/contract-job.png" alt="contract-job" />
+                Cargos
+            </button>
+
+            <button id="homeAvisos" class="meuBotao">
+                <img width="80" height="80" src="https://img.icons8.com/plasticine/100/paste.png" alt="paste" />
+                Avisos
+            </button>
+        </div>
+    </section>
+
+    <footer>
+    </footer>
+
+    <script>
+
+        var homeApto = document.getElementById("homeApto");
+
+        homeApto.addEventListener("click", function () {
+            alert("Você clicou no Apartamentos!");
+        });
+        var homeVagas = document.getElementById("homeVagas");
+
+        homeVagas.addEventListener("click", function () {
+            alert("Você clicou no Vagas!");
+        });
+        var homeMoradores = document.getElementById("homeMoradores");
+
+        homeMoradores.addEventListener("click", function () {
+            alert("Você clicou no Moradores!");
+        });
+        var homeFuncionarios = document.getElementById("homeFuncionarios");
+
+        homeFuncionarios.addEventListener("click", function () {
+            alert("Você clicou no Funcionarios!");
+        });
+        var homeBlocos = document.getElementById("homeBlocos");
+
+        homeBlocos.addEventListener("click", function () {
+            alert("Você clicou no Blocos!");
+        });
+        var homeDependentes = document.getElementById("homeDependentes");
+
+        homeDependentes.addEventListener("click", function () {
+            alert("Você clicou no Dependentes!");
+        });
+        var homeCargos = document.getElementById("homeCargos");
+
+        homeCargos.addEventListener("click", function () {
+            alert("Você clicou no Cargos!");
+        });
+        var homeAvisos = document.getElementById("homeAvisos");
+
+        homeAvisos.addEventListener("click", function () {
+            alert("Você clicou no Avisos!");
+        });
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

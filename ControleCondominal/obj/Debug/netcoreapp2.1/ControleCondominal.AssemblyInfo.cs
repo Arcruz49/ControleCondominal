@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControleCondominal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c695b2fdf9d5ec957990cab5da2856118efacc54")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControleCondominal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControleCondominal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
